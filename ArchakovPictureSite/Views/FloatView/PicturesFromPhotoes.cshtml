@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="PicturesFromPhotoesContainer">
+        <div class="PicturesFromPhotoesTable">
+        @{
+            int maxInString = 2;
+            for(int i = 0; i < Model.Length; i += maxInString)
+            {
+                <div class="PicturesFromPhotoesTableRow">
+                    @for (int j = 0; j < maxInString; j++)
+                    {
+                        if (i + j < Model.Length)
+                        {
+                            System.Drawing.Bitmap image = System.Drawing.Bitmap.FromFile(Model[i + j].FullName);
+                            int width = image.Width, height = image.Height;
+                            <div class="PictureFromPhotoContainer">
+                                <img src="@Url.Content("~/Content/Examples1/Pictures/" + Model[i+j].Name)" alt="PictureFromPhoto" width="@(width*0.1)" height="@(height*0.1)"/>
+                            </div>
+                        }
+                    }
+                </div>
+            }
+        }
+    </div>
+</div>
+@if (!ViewBag.isExhausted)
+{
+    <div id="MoreButtonContainer">
+        <div class="AppendButton">
+            @Html.AppendPicturesFromPhotoesButton("Еще", "docMan.InsertHTML(this,'" + Html.Notice("Подождите...").ToHtmlString() + "');request.CreateRequest('PicturesFromPhotoes', request.ReplaceResponse, '/FloatView/AppendPicturesFromPhotoesView');")
+        </div>
+    </div>
+}

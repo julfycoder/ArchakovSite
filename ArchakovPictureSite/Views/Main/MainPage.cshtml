@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "MainPage";
+}
+
+@section Header
+{}
+
+@{
+            <div id="HatContainer">
+                <div class="MainTextContainer">
+                    <h1>Рисуем по вашей фотографии</h1>
+                </div>@Html.Breakes(2)
+    
+                <div class="ExamplesContainer">
+                    <div class="ExamplesContainerRow">
+                        <div class="ExampleContainer1" align="center">
+                            <div class="PaintedExampleContainer1">
+                                <img src="/Content/Examples/Pictures/Кар6.jpg" alt="SSS" width="450" height="400"/>
+                            </div>
+                             <div class="OriginalExampleContainer1">
+                                <img src="/Content/Examples/Originals/фот6.jpg" width="160" height="120" alt="SomePhoto" />
+                            </div>
+                        </div>
+                        <div class="ExampleContainer2" align="center">
+                            <div class="PaintedExampleContainer2">
+                                <img src="/Content/Examples/Pictures/Кар1.jpg" alt="SSS" width="450" height="400"/>
+                            </div>
+                            <div class="OriginalExampleContainer2">
+                                <img src="/Content/Examples/Originals/фот1.jpg" width="160" height="120" alt="SomePhoto" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="MainTextContainer">
+                    <h1>картины акриловыми красками</h1>
+                </div>
+
+                <div class="NavigateContainer">
+                    <div class="NavigateContainerRow">
+                        <script type="text/javascript">
+                            function NoRepeatBodyFone() {
+                                document.body.style.backgroundRepeat = "no-repeat";
+                            }
+                            function RepeatBodyFone() {
+                                document.body.style.backgroundRepeat = "repeat-y";
+                            }
+                        </script>
+                        @Html.OpenPicturesFromPhotoesButton("Картины с фотографий", "RepeatBodyFone(); request.CreateRequest('PicturesFromPhotoes',request.InsertResponse, '/FloatView/OpenPicturesFromPhotoesView'); docMan.InsertHTMLById('FloatContainer', '" +
+                                                                                                        Html.Notice("Подождите...").ToHtmlString() + Html.Breakes(40).ToHtmlString() + "');",
+                                                                                                        "#FloatContainer")
+                        @Html.OpenPicturesFromPhotoesButton("Картина на заказ не с фотографии", "request.CreateRequest('PictureWithPhoto');", "#FloatContainer")
+                        @Html.OpenPicturesFromPhotoesButton("Общая информация", "FFF", "#FloatContainer")
+                        @Html.OpenPicturesFromPhotoesButton("Мои работы", "FFF", "#FloatContainer")
+                        @Html.OpenPicturesFromPhotoesButton("Заказать картину", "FFF", "#FloatContainer")
+                        @Html.ContactTheArtistButton("Связаться с художником", "NoRepeatBodyFone(); request.CreateRequest('ContactTheArtistView', request.InsertResponse, '/FloatView/ContactTheArtistView'); docMan.InsertHTMLById('FloatContainer', '" +
+                                                                                                        Html.Notice("Подождите...").ToHtmlString() + Html.Breakes(40).ToHtmlString() + "');",
+                                                                                                        "#FloatContainer")
+                    </div>    
+                </div>
+            </div>
+           
+            <div class="AdditionalTextContainer">
+                    <h2>Укрась свой дом или сделай оригинальный подарок</h2>
+            </div>
+   }
+   @{
+        <div id="FloatContainer" align="center">
+        </div>
+   }
+
+@section Footer
+{}
