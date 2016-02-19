@@ -4,8 +4,9 @@
 
 @section Header
 {}
-
+<div id="MainContainer">
 @{
+    
             <div id="HatContainer">
                 <div class="MainTextContainer">
                     <h1>Рисуем по вашей фотографии</h1>
@@ -40,10 +41,10 @@
                     <div class="NavigateContainerRow">
                         <script type="text/javascript">
                             function NoRepeatBodyFone() {
-                                document.body.style.backgroundRepeat = "no-repeat";
+                                $("#MainContainer").css("background-repeat", "no-repeat");
                             }
                             function RepeatBodyFone() {
-                                document.body.style.backgroundRepeat = "repeat-y";
+                                $("#MainContainer").css("background-repeat", "repeat-y");
                             }
                         </script>
                         @Html.OpenPicturesFromPhotoesButton("Картины с фотографий", "RepeatBodyFone(); request.CreateRequest('PicturesFromPhotoes',request.InsertResponse, '/FloatView/OpenPicturesFromPhotoesView'); docMan.InsertHTMLById('FloatContainer', '" +
@@ -68,6 +69,6 @@
         <div id="FloatContainer" align="center">
         </div>
    }
-
+   </div>
 @section Footer
 {}

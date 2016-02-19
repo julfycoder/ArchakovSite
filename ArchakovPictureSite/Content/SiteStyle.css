@@ -1,22 +1,23 @@
 ﻿/* File Created: января 1, 2016 */
 body {
-	background-image:url(/Content/Fones/FoneRamki.jpg);
+}
+#MainContainer 
+{
+    background-image:url(/Content/Fones/FoneRamki.jpg);
 	background-size:contain;
 	background-repeat:repeat-y;
-	font-size:1vw;
+	min-width:1100px;
+	padding-bottom:1px;
 }
 /*-----------------Hat-----------------*/
 #HatContainer {
 	padding-bottom:20px;
-	
 }
 /*-----------------MainText------------------*/
 .MainTextContainer {
 	text-align:center;
-	font-size:2vw;
 	color: rgba(220,220,220,1);
 	text-shadow: black 1px 1px 0;
-	
 }
 /*-----------------Examples------------------*/
 .ExamplesContainer 
@@ -111,7 +112,6 @@ body {
 {
 	display:table-row;
 }
-/*-------------------NavigatePOST---------------------*/
 .NavigateButtonContainerPost {
 	display:table-cell;
 	background-image: url(/Content/Fones/NavigateButtonFone4.png);
@@ -141,8 +141,6 @@ body {
 	
 }
 /*-------------------PicturesFromPhotoes---------------------*/
-#PicturesFromPhotoesContainer 
-{}
 .PicturesFromPhotoesTable {
 	display:table;
 	border-spacing:100px 50px;
